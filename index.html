@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sujay — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Sujay Shiva Prakash</a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#story">Featured App</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO: left = navy, right = white ── -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-photo">
+      <img src="/sujay.jpg" alt="Sujay Shiva Prakash" onerror="this.style.display='none'" />
+      <div class="photo-initials">SSP</div>
+    </div>
+    <h1 class="hero-name">Sujay Shiva<br>Prakash</h1>
+    <p class="hero-subtitle"><span id="role"></span></p>
+    <div class="hero-divider"></div>
+    <p class="hero-bio">Data Science Master's student at Arizona State University with a background in Computer Science. I transform complex, high-dimensional data into impactful solutions — spanning automated pipelines, NLP, Alzheimer's research, and predictive analytics for sustainability.</p>
+    <div class="hero-cta">
+      <a href="resume.pdf" class="btn btn-fill">Download Résumé</a>
+      <a href="https://www.linkedin.com/in/sujay-shiva-prakash/" target="_blank" class="btn">LinkedIn ↗</a>
+      <a href="https://github.com/Sujay6362" target="_blank" class="btn">GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="skills-card">
+      <h3 class="skills-card-title">Core Skills</h3>
+      <div class="skills-badges">
+        <span class="badge">Python</span>
+        <span class="badge">C++</span>
+        <span class="badge">MATLAB</span>
+        <span class="badge">Java</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Julia</span>
+        <span class="badge">PyTorch</span>
+        <span class="badge">TensorFlow</span>
+        <span class="badge">Docker</span>
+        <span class="badge">Git</span>
+        <span class="badge">PostgreSQL</span>
+        <span class="badge">SIMULINK</span>
+      </div>
+    </div>
+
+    <div class="education-mini-card">
+      <h3 class="education-mini-title">Education</h3>
+      <div class="education-mini-item">
+        <p class="education-mini-degree">M.S., Data Science, Analytics & Engineering</p>
+        <p class="education-mini-school">Arizona State University — Tempe, AZ</p>
+        <p class="education-mini-date">Dec 2026 (expected) · GPA 3.67</p>
+      </div>
+      <div class="education-mini-item">
+        <p class="education-mini-degree">B.E. in Electronics & Communication</p>
+        <p class="education-mini-school">Visvesvaraya Technological University</p>
+        <p class="education-mini-date">2017 – 2021</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── RESEARCH ── -->
+<section class="research" id="research">
+  <h2 class="research-title">Research</h2>
+  <div class="research-slides">
+
+    <div class="research-slide" id="slide-1">
+  <div class="research-content">
+    <h3 class="research-item-title">Dynamic FPCA-Based Cognitive Trajectory Prediction in Alzheimer's Disease</h3>
+    <div class="research-description">
+
+      <p>This research focuses on predicting longitudinal cognitive decline in Alzheimer's disease using the National Alzheimer's Coordinating Center (NACC) dataset. The study utilized 18,516 patients with at least three valid visits, resulting in over 125,000 longitudinal records spanning up to 19 years. Instead of predicting single cognitive scores, the objective was to model the entire trajectory of decline using real-time clinical progression data.</p>
+
+      <p>To achieve this, Functional Principal Component Analysis (FPCA) was applied to compress each patient's full NACCMMSE trajectory into two interpretable components: one capturing the rate and shape of decline, and the other representing baseline cognitive level. A key methodological innovation was constructing trajectories using actual calendar time (days since first visit) rather than visit indices, ensuring biologically meaningful temporal modeling. Age-stratified FPCA further improved representation by capturing population-specific progression patterns.</p>
+
+      <p>A hybrid feature architecture was designed by separating 104 selected variables into static baseline features (e.g., genetics, demographics, family history) and dynamic longitudinal features (e.g., cognitive tests, CDR scores, vitals). A cumulative learning framework was implemented using Random Forest models, where each successive year incorporates all prior patient history along with newly observed clinical data, mimicking real-world clinical decision-making.</p>
+
+      <p>The model demonstrated strong predictive performance, with trajectory prediction (R²) improving from 0.35 at baseline to 0.91 by Year 5. Baseline cognitive level prediction improved from 0.30 to 0.82 over the same period. Key predictors included visuospatial ability (PENTAGON), family history variables, and vascular health indicators. The results highlight that longitudinal data accumulation significantly enhances predictive accuracy and that early trajectory prediction becomes reliable after approximately two years of observation.</p>
+
+      <p>This work introduces a scalable framework for modeling irregular longitudinal clinical data using FPCA and cumulative machine learning, providing a foundation for early intervention strategies and personalized disease monitoring in neurodegenerative disorders.</p>
+
+    </div>
+  </div>
+</div>
+
+    <div class="research-images">
+
+  <!-- <div class="research-image-item">
+    <img src="images/fpca_trajectory_results.png" alt="Trajectory results">
+    <p>Actual vs predicted cognitive trajectories using FPCA-based modeling</p>
+  </div> -->
+
+  <div class="research-image-item">
+    <img src="./files/fpca_cumulative_pipeline.svg" alt="Pipeline">
+    <p><b>Fig : Pipeline - FPCA compression + cumulative year-wise prediction </b> </p>
+  </div>
+
+  <!-- <div class="research-image-item">
+    <img src="images/dataset_overview.png" alt="Dataset">
+    <p>NACC dataset structure with static and dynamic feature separation</p>
+  </div> -->
+
+</div>
+
+<div class="sheet-container">
+  <iframe 
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYmam4c9I1pE-Wa_HHPfvOLPWR4rpgkdFZyK_ciRwYRY5J7xp_9PD27jYxspACPg/pubhtml?widget=true&headers=false"
+    frameborder="0">
+  </iframe>
+</div>
+
+</section>
+
+
+<section class="experience" id="experience">
+  <h2 class="experience-title">Experience</h2>
+  <div class="experience-container">
+
+    <!-- ASU / ADOT -->
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3 class="experience-role">Graduate Research Assistant</h3>
+        <span class="experience-company">Arizona Water Innovation Initiative, Arizona State University (ASU), Tempe, AZ</span>
+        <span class="experience-date">2025 – Present</span>
+      </div>
+      <ul class="experience-description">
+        <li>Collaborated with ADOT on a large-scale urban freeway water optimization project, analyzing irrigation efficiency across 250+ miles of Phoenix freeway infrastructure.</li>
+        <li>Integrated multi-source datasets including plant inventory, soil moisture, weather station data, and land orientation to identify water overuse patterns.</li>
+        <li>Performed data wrangling and exploratory analysis to uncover inefficiencies in irrigation systems and environmental interactions.</li>
+        <li>Developed visualizations and data-driven recommendations to improve water usage efficiency and support ADOT design standards.</li>
+      </ul>
+      <div class="experience-tags">
+        <span class="experience-tag">Python</span>
+        <span class="experience-tag">Data Analysis</span>
+        <span class="experience-tag">Visualization</span>
+        <span class="experience-tag">Environmental Data</span>
+        <span class="experience-tag">Research</span>
+      </div>
+    </div>
+
+    <!-- OSI -->
+    <div class="experience-card">
+      <div class="experience-header">
+        <h3 class="experience-role">Research and Development Intern</h3>
+        <span class="experience-company">Open Systems International, Bengaluru</span>
+        <span class="experience-date">Mar 2023 – Feb 2024</span>
+      </div>
+      <ul class="experience-description">
+        <li>Developed automated data-driven QA workflows, reducing manual testing effort by 30% and improving system reliability.</li>
+        <li>Built scalable Python pipelines to ingest, preprocess, and transform large-scale operational datasets for analytics and reporting.</li>
+        <li>Optimized database performance using MongoDB and SQL, accelerating root-cause analysis and system performance insights.</li>
+        <li>Ensured data quality and collaborated with stakeholders to deliver reliable, production-ready data processes.</li>
+      </ul>
+      <div class="experience-tags">
+        <span class="experience-tag">Python</span>
+        <span class="experience-tag">MongoDB</span>
+        <span class="experience-tag">SQL</span>
+        <span class="experience-tag">Data Engineering</span>
+        <span class="experience-tag">Automation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── FEATURED APP ── -->
+<section class="story" id="story">
+  <h2 class="story-title">Featured App</h2>
+  <div class="story-container" id="story-container">
+    <div class="story-track">
+
+      <div class="story-slide" id="slide-1">
+        <div class="story-content">
+          <span class="story-step">01</span>
+          <h3>The Idea</h3>
+          <p>Started as a simple automation script to save 2 hours of manual work daily. What began as a Python script for personal use soon caught attention of colleagues.</p>
+        </div>
+        <div class="story-image">
+          <img src="./files/icon.png" alt="Idea sketch">
+          <!-- <img src="./files/icon1.png" alt="Automation 1">
+          <img src="./files/icon2.png" alt="Automation 2">
+          <img src="./files/icon3.png" alt="Automation 3">
+          <img src="./files/icon4.png" alt="Automation 4">
+          <img src="./files/icon5.png" alt="Automation 5">
+          <img src="./files/icon6.png" alt="Automation 6"> -->
+
+        </div>
+      </div>
+
+      <div class="story-slide" id="slide-2">
+        <div class="story-content">
+          <span class="story-step">02</span>
+          <h3>The Build</h3>
+          <p>Evolved into a full desktop application with PyQt5. Added features like scheduling, custom workflows, and real-time logging. Beta tested with 10 users.</p>
+        </div>
+        <div class="story-image">
+          <img src="./files/build.png" alt="Development">
+        </div>
+      </div>
+
+      <div class="story-slide" id="slide-3">
+        <div class="story-content">
+          <span class="story-step">03</span>
+          <h3>The Web</h3>
+          <p>Built a companion website for remote monitoring and control. Flask backend with real-time updates using WebSockets. Now accessible from anywhere.</p>
+        </div>
+        <div class="story-image">
+          <img src="./files/asuautopilot1.png" alt="Web interface">
+        </div>
+      </div>
+
+      <!-- <div class="story-slide" id="slide-4">
+        <div class="story-content">
+          <span class="story-step">04</span>
+          <h3>The Impact</h3>
+          <p>Now saving 50+ hours monthly across the team. Used by 3 departments. Open-sourced core modules to give back to the community.</p>
+        </div>
+        <div class="story-image">
+          <img src="https://via.placeholder.com/600x400/e8e3d8/0f2340?text=Impact+Metrics" alt="Impact">
+        </div>
+      </div> -->
+      
+
+    </div>
+  </div>
+  <!-- <div class="story-progress">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div> -->
+</section>
+
+
+<!-- ── PROJECTS ── -->
+<section class="projects" id="projects">
+  <h2 class="projects-title">Projects</h2>
+  <div class="projects-container">
+    <div class="projects-left">
+
+      
+      <div class="project-card" data-project="1">
+        <h3>scrollytelling--The-Global-EV-olution-Are-We-There-Yet</h3>
+        <span class="project-year">2025</span>
+        <p class="project-brief">ScrollyTelling Website</p>
+      </div>
+
+      <div class="project-card" data-project="2">
+        <h3> AndroidMobileApp-ArecaNut</h3>
+        <span class="project-year">2022</span>
+        <p class="project-brief">Mobile app | Web Scraping</p>
+      </div>
+
+      <div class="project-card" data-project="3">
+        <h3>SVMtextClassifier</h3>
+        <span class="project-year">2022</span>
+        <p class="project-brief">Machine Learning Text Classifier</p>
+      </div>
+
+      <div class="project-card" data-project="4">
+        <h3>Financial-Risk-Assessment</h3>
+        <span class="project-year">2026</span>
+        <p class="project-brief">Credit Default Prediction Model</p>
+      </div>
+
+      <div class="project-card hidden-project" data-project="5">
+        <h3>Project Epsilon</h3>
+        <span class="project-year">2022</span>
+        <p class="project-brief">Recommendation system for e-commerce</p>
+      </div>
+
+      <div class="project-card hidden-project" data-project="6">
+        <h3>Project Zeta</h3>
+        <span class="project-year">2021</span>
+        <p class="project-brief">Customer churn prediction model</p>
+      </div>
+    </div>
+
+    <div class="projects-right">
+      <div id="project-display">
+        <h2 id="display-title">Project Alpha</h2>
+        <p id="display-description">This project presents a scrollytelling-based interactive narrative that explores the global rise of electric vehicles (EVs), the technologies driving them, the policy incentives accelerating their growth, and the future challenges and opportunities in the space.</p>
+        <div class="project-images">
+          <img src="https://via.placeholder.com/600x400/f0ede6/0f2340?text=Alpha+Image+1" alt="Project Alpha screenshot 1">
+          <img src="https://via.placeholder.com/600x400/e8e3d8/0f2340?text=Alpha+Image+2" alt="Project Alpha screenshot 2">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+</section>
+
+
+<!-- ── CERTIFICATIONS ── -->
+<!-- <section class="certifications" id="certifications">
+  <h2 class="certifications-title">Certifications</h2>
+  <div class="certifications-container">
+
+    <div class="certification-card">
+      <div class="certification-image">
+        <img src="https://via.placeholder.com/400x200/f0ede6/0f2340?text=TensorFlow" alt="TensorFlow">
+      </div>
+      <div class="certification-content">
+        <h3 class="certification-name">TensorFlow Developer Certificate</h3>
+        <p class="certification-provider">Google</p>
+        <p class="certification-year">2024</p>
+        <p class="certification-description">Professional certification validating ability to build and train neural networks using TensorFlow for computer vision, NLP, and time series.</p>
+        <a href="#" class="certification-link" target="_blank">View Credential →</a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <div class="certification-image">
+        <img src="https://via.placeholder.com/400x200/e8e3d8/0f2340?text=AWS" alt="AWS">
+      </div>
+      <div class="certification-content">
+        <h3 class="certification-name">AWS Certified Machine Learning</h3>
+        <p class="certification-provider">Amazon Web Services</p>
+        <p class="certification-year">2023</p>
+        <p class="certification-description">Validates expertise in building, training, tuning, and deploying ML models on AWS infrastructure.</p>
+        <a href="#" class="certification-link" target="_blank">View Credential →</a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <div class="certification-image">
+        <img src="https://via.placeholder.com/400x200/f0ede6/0f2340?text=Deep+Learning" alt="Deep Learning">
+      </div>
+      <div class="certification-content">
+        <h3 class="certification-name">Deep Learning Specialization</h3>
+        <p class="certification-provider">deeplearning.ai / Coursera</p>
+        <p class="certification-year">2023</p>
+        <p class="certification-description">Five-course series covering neural networks, CNNs, RNNs, transformers, and reinforcement learning.</p>
+        <a href="#" class="certification-link" target="_blank">View Credential →</a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <div class="certification-image">
+        <img src="https://via.placeholder.com/400x200/e8e3d8/0f2340?text=Data+Science" alt="Data Science">
+      </div>
+      <div class="certification-content">
+        <h3 class="certification-name">Data Science Professional Certificate</h3>
+        <p class="certification-provider">HarvardX / edX</p>
+        <p class="certification-year">2022</p>
+        <p class="certification-description">Comprehensive program covering R, probability, inference, regression modeling, and machine learning.</p>
+        <a href="#" class="certification-link" target="_blank">View Credential →</a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <div class="certification-image">
+        <img src="https://via.placeholder.com/400x200/f0ede6/0f2340?text=Kubernetes" alt="Kubernetes">
+      </div>
+      <div class="certification-content">
+        <h3 class="certification-name">Certified Kubernetes Administrator</h3>
+        <p class="certification-provider">Cloud Native Computing Foundation</p>
+        <p class="certification-year">2022</p>
+        <p class="certification-description">Validates skills in deploying, managing, and troubleshooting containerized applications on Kubernetes.</p>
+        <a href="#" class="certification-link" target="_blank">View Credential →</a>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <h2 class="contact-title">Contact</h2>
+  <div class="contact-container">
+    <div class="contact-card">
+      <h3 class="contact-name">Sujay Shiva Prakash</h3>
+      <div class="contact-details">
+        <p class="contact-item">
+          <span class="contact-label">Email&nbsp;</span>
+          <a href="mailto:sshivap8@asu.edu" class="contact-link">sshivap8@asu.edu</a>
+        </p>
+      </div>
+      <textarea id="contact-message" class="contact-message-box" placeholder="Write your message here..." rows="5"></textarea>
+      <button id="draft-email-btn" class="contact-draft-btn">
+        <span class="btn-icon">✉</span>
+        Draft Email
+      </button>
+      <p class="contact-note">Clicking "Draft Email" will open Gmail with your message.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
