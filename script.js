@@ -48,15 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "./files/FIMG_1.png",
         "./files/FIMG_2.png"
       ]
+    },
+    5: {
+      title: "A Dockerized Neo4j graph database system that loads NYC Taxi trip data and implements classic graph algorithms.",
+      description: "Built a containerized graph data processing pipeline using Docker and Neo4j. Loaded and transformed real NYC Yellow Taxi trip data into a graph structure with 42 location nodes and 1530 trip relationships, filtered to the Bronx borough. Implemented two classic graph algorithms -weighted PageRank to rank locations by trip significance and Breadth First Search (BFS) for shortest path traversal between locations. The entire environment is automated using Docker with no manual intervention required.",
+      live: "https://github.com/Sujay6362/graph-data-processing",
+      images: [
+        "./files/graph.gif"
+      ]
     }
-    // 5: {
-    //   title: "Project Epsilon",
-    //   description: "Hybrid recommendation system combining collaborative filtering with content-based methods. Implemented for an e-commerce platform, resulting in 25% increase in click-through rate and 15% uplift in conversions.",
-    //   images: [
-    //     "https://via.placeholder.com/600x400/f0ede6/0f2340?text=Epsilon+Recommendations",
-    //     "https://via.placeholder.com/600x400/e8e3d8/0f2340?text=Epsilon+Architecture"
-    //   ]
-    // },
     // 6: {
     //   title: "Project Zeta",
     //   description: "Customer churn prediction model using XGBoost with engineered features from user behavior logs. Achieved AUC of 0.92 and helped retain 30% of at-risk customers through targeted interventions.",
